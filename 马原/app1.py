@@ -483,64 +483,6 @@ st.markdown(
 )
 
 # =====================================
-# 题材分析
-# =====================================
-
-if "题材" in df.columns:
-
-    st.header("历史题材传播结构")
-
-    subject_group = df.groupby(
-        "题材"
-    )["播放数"].mean().reset_index()
-
-    fig3 = px.bar(
-        subject_group,
-        x="题材",
-        y="播放数",
-        color="播放数",
-        title="不同历史题材平均播放量"
-    )
-
-    fig3.update_layout(
-        paper_bgcolor="#f6f1e7",
-        plot_bgcolor="#fffdf7"
-    )
-
-    st.plotly_chart(
-        fig3,
-        use_container_width=True
-    )
-
-    # 自动分析题材
-
-    top_subject = subject_group.sort_values(
-        by="播放数",
-        ascending=False
-    ).iloc[0]["题材"]
-
-    st.markdown(
-        f'''
-        <div class="conclusion-box">
-        数据显示，"{top_subject}"类历史题材拥有最强传播能力。
-
-        这说明平台更偏好：
-
-        - 冲突性强
-        - 人物对立明显
-        - 情绪张力高
-        - 叙事节奏快
-
-        的历史内容。
-
-        相比之下，制度史、经济史等需要长期解释链条支撑的内容，更难获得高传播。
-
-        平台传播逻辑正在推动历史叙事从“结构化历史”向“戏剧化历史”转变。
-        ''',
-        unsafe_allow_html=True
-    )
-
-# =====================================
 # UP主分析
 # =====================================
 
