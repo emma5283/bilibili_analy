@@ -734,7 +734,7 @@ final_text = " ".join(filtered_words)
 
 wc = WordCloud(
 
-    font_path="msyh.ttc",
+    font_path="STSONG.TTF",
 
     width=1200,
     height=600,
