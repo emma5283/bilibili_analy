@@ -789,6 +789,7 @@ if "情绪" in df.columns:
     )
 
     st.markdown("""
+    <div class="conclusion-box">
     从情绪聚类结果来看：
 
     - 高情绪内容往往拥有更高互动率
